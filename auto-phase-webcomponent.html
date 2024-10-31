@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Title</title>
+
+    <style>
+      body {
+        font-family: sans-serif;
+      }
+
+      .wrapper {
+        /* ドラッグで横幅を変更できる */
+        resize: horizontal;
+        overflow: auto;
+        background: #e0e0e0;
+      }
+    </style>
+    <!-- CDNからライブラリを導入 -->
+    <script src="https://unpkg.com/budoux/bundle/budoux-ja.min.js"></script>
+  </head>
+
+  <body>
+    <h1>budoux の作例</h1>
+    <p>右下のつまみを動かしてリサイズできます。</p>
+    <h2>Web Component方式</h2>
+    <div class="wrapper">
+      <budoux-ja
+        >ジョバンニは、口笛を吹いているようなさびしい口付きで、檜のまっ黒にならんだ町の坂を下りて来たのでした。坂の下に大きな一つの街燈が、青白く立派に光って立っていました。ジョバンニが、どんどん電燈の方へ下りて行きますと、いままでばけもののように、長くぼんやり、うしろへ引いていたジョバンニの影ぼうしは、だんだん濃く黒くはっきりなって、足をあげたり手を振ったり、ジョバンニの横の方へまわって来るのでした。</budoux-ja
+      >
+    </div>
+  </body>
+</html>

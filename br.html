@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Title</title>
+
+    <style>
+      body {
+        font-family: sans-serif;
+      }
+
+      .container {
+        container-type: inline-size;
+
+        background: #e0e0e0;
+        resize: horizontal;
+        overflow: auto;
+      }
+
+      @container (568px < width) {
+        .mobile-only {
+          display: none;
+        }
+      }
+
+      @container (568px <=width < 960px) {
+        .tablet-only {
+          display: none;
+        }
+      }
+
+      @container (width <=960px) {
+        .desktop-only {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>br の作例</h1>
+    <p>右下のつまみを動かしてリサイズできます。</p>
+
+    <div class="container">
+      <div class="item">
+        JavaScriptで<br
+          class="mobile-only"
+        />クリエイティブコーディング<br />テキストを分解し<br
+          class="mobile-only"
+        />パーティクルにする演出
+      </div>
+    </div>
+  </body>
+</html>

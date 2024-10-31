@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Title</title>
+
+    <style>
+      body {
+        font-family: sans-serif;
+      }
+
+      .wrapper {
+        /* ドラッグで横幅を変更できる */
+        resize: horizontal;
+        overflow: auto;
+        background: #e0e0e0;
+      }
+
+      #inline-block-version {
+        span {
+          display: inline-block;
+        }
+      }
+
+      #wbr-version {
+        word-break: keep-all;
+      }
+    </style>
+    <script type="importmap">
+      {
+        "imports": {
+          "budoux": "https://unpkg.com/budoux/module/index.js"
+        }
+      }
+    </script>
+    <script type="module">
+      import { loadDefaultJapaneseParser } from "budoux";
+
+      const SENTENCE =
+        "ジョバンニは、口笛を吹いているようなさびしい口付きで、檜のまっ黒にならんだ町の坂を下りて来たのでした。坂の下に大きな一つの街燈が、青白く立派に光って立っていました。ジョバンニが、どんどん電燈の方へ下りて行きますと、いままでばけもののように、長くぼんやり、うしろへ引いていたジョバンニの影ぼうしは、だんだん濃く黒くはっきりなって、足をあげたり手を振ったり、ジョバンニの横の方へまわって来るのでした。";
+
+      const parser = loadDefaultJapaneseParser();
+      const list = parser.parse(SENTENCE);
+      const htmlString = (document.querySelector(
+        "#inline-block-version"
+      ).innerHTML = list.map((word) => "<span>" + word + "</span>").join(""));
+      document.querySelector("#wbr-version").innerHTML = list
+        .map((word) => word + "<wbr />")
+        .join("");
+      console.log(); // ['今日は', '天気です。']
+    </script>
+  </head>
+
+  <body>
+    <h1>budoux の作例</h1>
+    <p>右下のつまみを動かしてリサイズできます。</p>
+
+    <h2>inline-block方式</h2>
+    <div class="wrapper" id="inline-block-version"></div>
+
+    <h2>wbr方式</h2>
+    <div class="wrapper" id="wbr-version"></div>
+  </body>
+</html>

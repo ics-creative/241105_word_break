@@ -17,21 +17,22 @@
         resize: horizontal;
         overflow: auto;
       }
-
+      /* モバイル幅では改行を無効化 */
       @container (568px < width) {
-        .mobile-only {
+        .only-mobile {
           display: none;
         }
       }
 
-      @container (568px <=width < 960px) {
-        .tablet-only {
+      /* タブレット幅では改行を無効化 */
+      @container (568px <= width < 960px) {
+        .only-tablet {
           display: none;
         }
       }
-
-      @container (width <=960px) {
-        .desktop-only {
+      /* デスクトップ幅では改行を無効化 */
+      @container (width <= 960px) {
+        .only-desktop {
           display: none;
         }
       }
@@ -43,13 +44,7 @@
     <p>右下のつまみを動かしてリサイズできます。</p>
 
     <div class="container">
-      <div class="item">
-        JavaScriptで<br
-          class="mobile-only"
-        />クリエイティブコーディング<br />テキストを分解し<br
-          class="mobile-only"
-        />パーティクルにする演出
-      </div>
+      吾輩は猫である。名前はまだ無い。<br class="only-mobile" />どこで生れたかとんと見当がつかぬ。<br />何でも薄暗いじめじめした所で<br class="only-mobile" />ニャーニャー泣いていた事だけは記憶している。<br  />吾輩はここで始めて人間というものを見た。
     </div>
   </body>
 </html>

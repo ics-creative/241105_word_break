@@ -11,6 +11,7 @@
       }
 
       .container {
+        /* コンテナークエリーを適用 */
         container-type: inline-size;
 
         background: #e0e0e0;
@@ -18,20 +19,20 @@
         overflow: auto;
       }
       /* モバイル幅では改行を無効化 */
-      @container (568px < width) {
+      @container (640px < width) {
         .only-mobile {
           display: none;
         }
       }
 
       /* タブレット幅では改行を無効化 */
-      @container (568px <= width < 960px) {
+      @container (640px <= width < 1024px) {
         .only-tablet {
           display: none;
         }
       }
       /* デスクトップ幅では改行を無効化 */
-      @container (width <= 960px) {
+      @container (width <= 1024px) {
         .only-desktop {
           display: none;
         }
@@ -41,7 +42,7 @@
 
   <body>
     <h1>br の作例</h1>
-    <p>右下のつまみを動かしてリサイズできます。</p>
+    <p>右下のつまみを動かしてリサイズできます。もしくはブラウザ幅を狭めて確認ください。</p>
 
     <div class="container">
       吾輩は猫である。名前はまだ無い。<br class="only-mobile" />どこで生れたかとんと見当がつかぬ。<br />何でも薄暗いじめじめした所で<br class="only-mobile" />ニャーニャー泣いていた事だけは記憶している。<br  />吾輩はここで始めて人間というものを見た。

@@ -11,6 +11,7 @@ body {
   overflow: auto;
   background: #e0e0e0;
   padding: 16px;
+  font-size: 0.875rem;
 
   position: relative;
 
@@ -25,4 +26,8 @@ body {
     height: 24px;
     pointer-events: none;
   }
+}
+h1, h2 {
+  font-size: 1.0rem;
+  font-weight: 900;
 }

@@ -2,6 +2,7 @@
 body {
   font-family: sans-serif;
   line-height: 2.0;
+  background: white;
 }
 
 .wrapper {
@@ -19,8 +20,9 @@ body {
     position: absolute;
     right: 0;
     bottom: 0;
-    background-image: linear-gradient(135deg, #3223B3 0, #3223B3 50%, #fff 50%);
+    background-image: linear-gradient(135deg, #3223B3 0, #3223B3 50%, #FFFFFF00 50%);
     width: 24px;
     height: 24px;
+    pointer-events: none;
   }
 }

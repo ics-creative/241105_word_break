@@ -1,6 +1,11 @@
 
 body {
-  font-family: sans-serif;
+  font-family: "Helvetica Neue",
+  Arial,
+  "Hiragino Kaku Gothic ProN",
+  "Hiragino Sans",
+  Meiryo,
+  sans-serif;
   line-height: 2.0;
   background: white;
 }
@@ -9,7 +14,7 @@ body {
   /* ドラッグで横幅を変更できる */
   resize: horizontal;
   overflow: auto;
-  background: #e0e0e0;
+  background: #f0f0f0;
   padding: 16px;
   font-size: 0.875rem;
 
@@ -25,9 +30,34 @@ body {
     width: 24px;
     height: 24px;
     pointer-events: none;
+
+    /* 明度のCSS変数 */
+    --alpha: 1.0;
+    animation: gradient 0.2s infinite;
+    opacity: var(--alpha);
   }
 }
+
 h1, h2 {
   font-size: 1.0rem;
   font-weight: 900;
+  color: #3223B3
+}
+
+.help {
+  font-size: 0.75rem;
+}
+
+/* CSS変数の色のCSSアニメーション */
+
+@keyframes gradient {
+  0% {
+    --alpha: 1.0;
+  }
+  50% {
+    --alpha: 0.85;
+  }
+  100% {
+    --alpha: 1.0;
+  }
 }
